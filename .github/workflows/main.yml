@@ -58,7 +58,7 @@ jobs:
       - name: Build&Push
         if: success()
         run: |
-          docker buildx create --platform ${{ steps.prepare.outputs.docker_platform }} && \
+          docker buildx create --use --platform ${{ steps.prepare.outputs.docker_platform }} && \
           docker buildx build \
           --platform ${{ steps.prepare.outputs.docker_platform }} \
           --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \
