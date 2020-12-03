@@ -1,0 +1,6 @@
+{
+    "Settings": {
+        "LicenseAccepted": "SPEEDTEST_LICENSE_ACCEPTANCE_STRING",
+        "GDPRTimeStamp": SPEEDTEST_TIMESTAMP
+    }
+}

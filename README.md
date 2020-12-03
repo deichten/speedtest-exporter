@@ -1,2 +1,3 @@
-# speedtest-exporter-arm
- Prometheus Exporter making use of official Ookla binaries
+# Speedtest Prometheus Exporter
+
+Prometheus Exporter making use of official Ookla binaries
