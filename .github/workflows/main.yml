@@ -17,7 +17,7 @@ jobs:
       DOCKER_IMAGE: deichten/speedtest-exporter-arm
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      DOCKER_TARGET_PLATFORM: linux/arm/v7
+      DOCKER_TARGET_PLATFORM: linux/arm/v6,linux/arm/v7,linux/arm64
       SPEEDTEST_LIC_STRING: ${{ secrets.SPEEDTEST_LIC_STRING }}
       SPEEDTEST_LIC_TIMESTAMP: ${{ secrets.SPEEDTEST_LIC_TIMESTAMP }}
 
@@ -55,10 +55,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }} 
 
+      - name: Setup Docker BuildX
+        uses: crazy-max/ghaction-docker-buildx@v3
+
       - name: Build&Push
         if: success()
         run: |
-          docker buildx create --platform ${{ steps.prepare.outputs.docker_platform }} && \
           docker buildx build \
           --platform ${{ steps.prepare.outputs.docker_platform }} \
           --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \
