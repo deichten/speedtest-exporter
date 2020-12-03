@@ -7,6 +7,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61 &&
     echo "deb https://ookla.bintray.com/debian generic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list && \
     install_packages speedtest jq
 
-ADD speedtest-cli.json $HOME/.config/ookla/speedtest-cli.json
+ADD speedtest-cli.json .config/ookla/speedtest-cli.json
 
 CMD ["/bin/bash"]
