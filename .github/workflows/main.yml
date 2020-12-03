@@ -17,7 +17,7 @@ jobs:
       DOCKER_IMAGE: deichten/speedtest-exporter-arm
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      DOCKER_TARGET_PLATFORM: linux/arm/v6,linux/arm/v7,linux/arm64
+      DOCKER_TARGET_PLATFORM: linux/arm/v7,linux/arm64
       SPEEDTEST_LIC_STRING: ${{ secrets.SPEEDTEST_LIC_STRING }}
       SPEEDTEST_LIC_TIMESTAMP: ${{ secrets.SPEEDTEST_LIC_TIMESTAMP }}
 
